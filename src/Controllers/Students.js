@@ -2,7 +2,6 @@ const model = require("../Models/Students");
 const respone = require("../Helpers/Respon");
 
 class Students {
-    
     async setStudnets(req, res) {
         const data = {
             nama: req.body.name,
