@@ -27,41 +27,7 @@ class Students {
         }
     }
 
-    async getById(req, res) {
-        try {
-            const result = await model.getById(req.params.id);
-            return respone(res, 200, result);
-        } catch (error) {
-            return respone(res, 200, error);
-        }
-    }
 
-    async getByName(req, res) {
-        try {
-            const result = await model.getByName(req.params.name);
-            return respone(res, 200, result);
-        } catch (error) {
-            return respone(res, 200, error);
-        }
-    }
-
-    async deletById(req, res) {
-        try {
-            const result = await model.deletById(req.params.id);
-            return respone(res, 200, result);
-        } catch (error) {
-            return respone(res, 200, error);
-        }
-    }
-
-    async editStudent(req, res) {
-        try {
-            const result = await model.editStudent(req.params.id);
-            return respone(res, 200, result);
-        } catch (error) {
-            return respone(res, 200, error);
-        }
-    }
 }
 
 module.exports = new Students();
