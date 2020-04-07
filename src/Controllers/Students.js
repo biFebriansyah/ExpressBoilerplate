@@ -1,5 +1,5 @@
 const model = require("../Models/Students");
-const respone = require("../Helpers/Respon");
+const response = require("../Helpers/Response");
 
 class Students {
     async setStudnets(req, res) {
@@ -12,18 +12,18 @@ class Students {
             };
 
             const result = await model.setStudnets(data);
-            return respone(res, 200, result);
+            return response(res, 200, result);
         } catch (error) {
-            return respone(res, 200, error);
+            return response(res, 500, error);
         }
     }
 
     async getStudents(req, res) {
         try {
             const result = await model.getStudents();
-            return respone(res, 200, result);
+            return response(res, 200, result);
         } catch (error) {
-            return respone(res, 200, error);
+            return response(res, 500, error);
         }
     }
 }
