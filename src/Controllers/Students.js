@@ -3,14 +3,14 @@ const respone = require("../Helpers/Respon");
 
 class Students {
     async setStudnets(req, res) {
-        const data = {
-            nama: req.body.name,
-            jurusan: req.body.jurusan,
-            kelas: req.body.kelas,
-            handphone: req.body.handphone,
-        };
-
         try {
+            const data = {
+                nama: req.body.name,
+                jurusan: req.body.jurusan,
+                kelas: req.body.kelas,
+                handphone: req.body.handphone,
+            };
+
             const result = await model.setStudnets(data);
             return respone(res, 200, result);
         } catch (error) {
@@ -26,8 +26,6 @@ class Students {
             return respone(res, 200, error);
         }
     }
-
-
 }
 
 module.exports = new Students();
