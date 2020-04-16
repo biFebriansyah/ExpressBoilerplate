@@ -18,14 +18,21 @@
     "eslint": "^6.8.0",
     "eslint-config-node": "^4.0.0",
     "eslint-config-prettier": "^6.10.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-jsx": "^8.1.0",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-standard": "^4.0.1",
     "prettier": "^2.0.3"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "js-yaml": "^3.13.1",
     "morgan": "^1.10.0",
-    "pg": "^8.0.0"
+    "pg": "^8.0.0",
+    "swagger-ui-express": "^4.1.4"
   }
 }

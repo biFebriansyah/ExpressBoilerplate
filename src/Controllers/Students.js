@@ -23,6 +23,8 @@ class Students {
             const result = await model.getStudents();
             return response(res, 200, result);
         } catch (error) {
+            console.log("masuk");
+            console.log(error);
             return response(res, 500, error);
         }
     }

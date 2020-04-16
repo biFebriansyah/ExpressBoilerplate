@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+    description: Biolerplate express
+    version: 1.0.0
+    title: Boilerplate Express
+paths:
+    /students:
+        get:
+            tags:
+                - Get Students
+            description: Get All data Student
+            security:
+                - BearerAuth: []
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    status:
+                                        type: integer
+                                        example: 200
+                                    description:
+                                        type: string
+                                    result:
+                                        type: object
+        post:
+            tags:
+                - Add Students
+            description: Insert new Student data
+            security:
+                - BasicAuth: []
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                              name:
+                                type: string
+                                example: ebiebi
+                              jurusan:
+                                type: string
+                                example: teknik
+                              kelas:
+                                type: string
+                                example: dua
+                              handphone:
+                                type: integer
+                                example: 0812121212
+                            required:
+                                - name
+                                - jurusan
+                                - kelas
+                                - handphone
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                          schema:
+                              properties:
+                                    status:
+                                        type: integer
+                                        example: 200
+                                    description:
+                                        type: string
+                                        example: ok
+                                    result:
+                                        type: object
