@@ -1,6 +1,9 @@
-const conn = require("../Configs/conn").con;
+const Model = require("./UserModel").Users;
 
 class Users {
+    findAll() {
+        Model.findAll()
+    }
 }
 
 module.exports = new Users();

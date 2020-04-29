@@ -1,4 +1,4 @@
-const model = require("../Models/Students");
+const model = require("../Models/Users");
 const response = require("../Helpers/Response");
 
 class Students {
