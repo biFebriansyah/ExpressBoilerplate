@@ -1,8 +1,8 @@
 const express = require("express");
-const students = require("./Routes/Students");
+const Users = require("./Routes/Users");
 
 const MainRouters = express.Router();
 
-MainRouters.use("/students", students);
+MainRouters.use("/users", Users);
 
 module.exports = MainRouters;
