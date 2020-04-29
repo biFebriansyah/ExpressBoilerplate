@@ -3,7 +3,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const db = require("./src/Configs/conn");
-const seque = require("./src/Configs/sequelize");
 const router = require("./src/main");
 const fs = require("fs");
 const path = require("path");
@@ -20,17 +19,8 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 server.use(morgan("dev"));
 
-// db.dbConnect();
+db.sequelizeTest();
 server.use(router);
-
-seque
-    .authenticate()
-    .then(() => {
-        console.log("Connection has been established successfully.");
-    })
-    .catch((err) => {
-        console.error("Unable to connect to the database:", err);
-    });
 
 server.listen(servicePort, () => {
     console.log(`Service running in port ${servicePort}`);

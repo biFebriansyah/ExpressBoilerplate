@@ -1,8 +1,8 @@
 const { Pool } = require("pg");
+const { Sequelize } = require("sequelize");
 
 class dbConnect {
-  
-  constructor() {
+    constructor() {
         this.con = new Pool({
             user: process.env.PGUSER,
             host: process.env.PGHOST,
@@ -10,6 +10,17 @@ class dbConnect {
             password: process.env.PGPASSWORD,
             port: process.env.PGPORT,
         });
+
+        this.sequelize = new Sequelize(
+            process.env.PGDATABASE,
+            process.env.PGUSER,
+            process.env.PGPASSWORD,
+            {
+                host: "localhost",
+                port: 5431,
+                dialect: "postgres",
+            }
+        );
     }
 
     dbConnect() {
@@ -21,6 +32,17 @@ class dbConnect {
                 console.log("Database Connected");
             }
         });
+    }
+
+    sequelizeTest() {
+        this.sequelize
+            .authenticate()
+            .then(() => {
+                console.log("Connection has been established successfully.");
+            })
+            .catch((err) => {
+                console.error("Unable to connect to the database:", err);
+            });
     }
 }
 
